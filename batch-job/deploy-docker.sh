@@ -9,7 +9,7 @@ echo "Building Docker Image..."
 docker build -t $DOCKER_CONTAINER .
 
 echo "Authenticating against AWS ECR..."
-eval $(aws ecr get-login --no-include-email --region us-west-2)
+eval $(aws ecr get-login --no-include-email --region ap-southeast-2)
 
 echo "Tagging ${REPO}..."
 docker tag $DOCKER_CONTAINER:latest $REPO:$TAG
