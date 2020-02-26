@@ -1,17 +1,6 @@
 # Node.js Base Image
-FROM node:boron
+FROM russelljarvis/efel_allen_dm
 
-# Create AWS Batch Job Work Directory
-WORKDIR /usr/src/app
-
-# Copy package.json into Work Directory
-COPY package.json /usr/src/app
-
-# Install AWS Batch Job Dependencies
-RUN npm install
-
-# Bundle AWS Batch Job Source
-COPY . /usr/src/app
 
 # Run AWS Batch Job
-CMD [ "node", "index" ]
+CMD [ "python /home/jovyan/neuronunit/neuronunit/unit_test/working/opt_all.py"]
